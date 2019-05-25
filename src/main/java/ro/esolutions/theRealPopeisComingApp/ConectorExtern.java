@@ -1,6 +1,7 @@
 package ro.esolutions.theRealPopeisComingApp;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -9,10 +10,19 @@ import java.util.List;
 @RestController
 public class ConectorExtern {
 
-    @GetMapping("/churches")
-    public String getAllChurches(){
+    @GetMapping("/churches/{month}")
+    public String getAllChurches(@PathVariable String month){
+
+        String raspuns = "Bisericile mele sunt: ";
 
         List<Biserica> biserici = new ArrayList<>();
+
+        for(int i=0; i<biserici.size(); ++i) {
+            if(biserici.get(i).luna == month) {
+                raspuns += biserici.get(i).nume + ", ";
+
+            }
+        }
 
         Biserica catedralaMantuiriiNeamului = new Biserica();
         catedralaMantuiriiNeamului.nume = "Catedrala Mantuirii Neamului";
@@ -50,6 +60,6 @@ public class ConectorExtern {
         biserici.add(moscheeaAlbastra);
         biserici.add(Balasa);
 
-    return "Bisericile mele sunt: " + biserici. ;
+    return raspuns;
     }
 }
