@@ -17,13 +17,6 @@ public class ConectorExtern {
 
         List<Biserica> biserici = new ArrayList<>();
 
-        for(int i=0; i<biserici.size(); ++i) {
-            if(biserici.get(i).luna == month) {
-                raspuns += biserici.get(i).nume + ", ";
-
-            }
-        }
-
         Biserica catedralaMantuiriiNeamului = new Biserica();
         catedralaMantuiriiNeamului.nume = "Catedrala Mantuirii Neamului";
         catedralaMantuiriiNeamului.tipReligie = "ortodoxa";
@@ -59,6 +52,13 @@ public class ConectorExtern {
         biserici.add(bunaVestireBelu);
         biserici.add(moscheeaAlbastra);
         biserici.add(Balasa);
+
+        for(int i=0; i<biserici.size(); i++) {
+            if(biserici.get(i).luna.equals(month)) {
+                raspuns += biserici.get(i).nume + ", ";
+
+            }
+        }
 
     return raspuns;
     }
