@@ -39,7 +39,7 @@ public class ConectorExtern {
         moscheeaAlbastra.nume = "Moscheea Albastra";
         moscheeaAlbastra.tipReligie = "musulmana";
         moscheeaAlbastra.program = "24/7";
-        moscheeaAlbastra.luna = "Decembrie";
+        moscheeaAlbastra.luna = "Ianuarie";
 
         Biserica Balasa = new Biserica();
         Balasa.nume = "Biserica Balasa";
